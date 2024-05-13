@@ -20,3 +20,12 @@ function displayuser(ud){
     '<button class="delete-button">Delete</button> <button class="edit-button">Edit</button>';
     list.appendChild(nli);
 }
+window.addEventListener("DOMContentLoaded",()=>{
+    axios
+    .get("https://crudcrud.com/api/8cce2dc784694234a8e2ff261767e976/appdata")
+    .then((res)=>{
+        for(let i=0;i<res.data.length;i++){
+            displayuser(res.data[i]);
+        }
+    })
+})
